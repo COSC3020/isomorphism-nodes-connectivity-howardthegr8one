@@ -26,7 +26,8 @@ minimum map every node in $A$ to one and only one node in $B$.
 \
 \
 Since every node in both graphs can be mapped to one and only one node in the other graph and since the graphs are completely 
-connected it would mean that all nodes in both graphs will have corresponding degrees then the mapping would be a bijection, 
-which contradicts our statement that two graphs who share the same number of nodes and are completely connected are NOT isomorphic. 
-This contradiction proves our original statement that if $A$ and $B$ have the same number of nodes and are both completely connected 
-then $A$ and $B$ are isomorphic.
+connected it would mean that all nodes in both graphs will have corresponding degrees then the mapping would be a bijection. Additionally
+since the graphs are completely connected it would mean that they have the same number of edges, $|E_1| = |E_2|$. This means that the edges
+in one graph can be mapped to one and only one unique edge in the other graph. These two observations create a contradiction from our statement 
+that two graphs who share the same number of nodes and are completely connected are NOT isomorphic. This contradiction proves our original 
+statement that if $A$ and $B$ have the same number of nodes and are both completely connected then $A$ and $B$ are isomorphic.
