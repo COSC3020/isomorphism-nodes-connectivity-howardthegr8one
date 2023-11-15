@@ -16,18 +16,29 @@ one-to-one and onto function (bijection) $f: V_1 \rightarrow V_2$ such that $(u,
 "If $A$ and $B$ have the same number of nodes and are both completely connected then $A$ and $B$ are isomorphic" 
 can be written in the form $(P \wedge Q) \rightarrow R$ where $P$ is the statement $A$ and $B$ have the same 
 number of nodes, $Q$ is the statement that $A$ and $B$ are completely connected graphs, and $R$ is the statement 
-$A$ and $B$ are isomorphic. Using proof by contradiction our new logical statement becomes $(P \wedge Q) \rightarrow \neg R$
+$A$ and $B$ are isomorphic. Using proof by contrapositive our new logical statement becomes $\neg R \rightarrow (\neg P \lor \neg Q)$
 \
 \
-Let $A$ and $B$ be two graphs who have the same number of nodes, are completely connected, and are NOT isomorphic. 
-Not being isomorphic means that there does not exist a one-to-one and onto function (bijection) $f: V_1 \rightarrow V_2$ such 
-that $(u,v) \in E_1$ iff $(f(u),f(v)) \in E_2$. However since $A$ and $B$ have the same number of nodes then we can at 
-minimum map every node in $A$ to one and only one node in $B$. 
+Let $A$ and $B$ be two graphs who are NOT isomorphic. If the graphs aren't isomorphic then $A$ and $B$ do not have the same 
+number of nodes or $A$ and $B$ are not completely connected. Not being isomorphic means that there does not exist a one-to-one 
+and onto function (bijection) $f: V_1 \rightarrow V_2$ such that $(u,v) \in E_1$ iff $(f(u),f(v)) \in E_2$. 
 \
 \
-Since every node in both graphs can be mapped to one and only one node in the other graph and since the graphs are completely 
-connected it would mean that all nodes in both graphs will have corresponding degrees then the mapping would be a bijection. Additionally
-since the graphs are completely connected it would mean that they have the same number of edges, $|E_1| = |E_2|$. This means that the edges
-in one graph can be mapped to one and only one unique edge in the other graph. These two observations create a contradiction from our statement 
-that two graphs who share the same number of nodes and are completely connected are NOT isomorphic. This contradiction proves our original 
-statement that if $A$ and $B$ have the same number of nodes and are both completely connected then $A$ and $B$ are isomorphic.
+Case 1: $|A| \neq |B|$ \
+If graphs $A$ and $B$ don't have the same number of nodes then a bijection function isn't possible. This is because if $|A| \neq |B|$ 
+then $|A| < |B|$ or $|A| > |B|$, and in either case a one-to-one mapping can't happen as all of the nodes of $A$ will be mapped but nodes 
+in $B$ won't be mapped to anything, or vice versa which prevents a one-to-one mapping. Therefore when $|A| \neq |B|$ the graphs can't be 
+isomorphic.
+\
+\
+Case 2: $A \wedge B$ are not completely connected \
+If graphs $A \wedge B$ are not completely connected then one can be completely connected while the other isn't, or vice versa, or neither 
+can be completely connected. In any of these three cases, even if the graphs have equal numbers of nodes, there isn't a guarantee that they 
+will have the same number of edges. In fact in the case that only one of the graphs is completely connected then a bijection mapping isn't 
+possible because there will be at least one instance where $(u,v) \in E_1$ but $(f(u), f(v)) \notin E_2$ which goes against our definition of 
+isomorphism. We also can't say that two graphs in which are neither completely connected can be isomorphic as it would depend on the specifics
+of the given graphs. Therefore $A$ and $B$ aren't isomorphic when $A \wedge B$ are not completely connected. 
+\
+\
+Thus by directly proving the contrapositive of our statement we have proven the original statement that "If $A$ and $B$ have the same number of 
+nodes and are both completely connected then $A$ and $B$ are isomorphic"
