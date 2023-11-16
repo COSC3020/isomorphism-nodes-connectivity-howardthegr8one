@@ -13,25 +13,18 @@ one-to-one and onto function (bijection) $f: V_1 \rightarrow V_2$ such that $(u,
 
 
 # My Proof: 
-Using a graph theory book I have, "Introduction to Graph Theory by Richard J. Trudeau", he states that 
-'an isomorphism is a one-to-one correspondence between vertex sets' and goes on to mention that 'an 
-isomorphism induces a one-to-one correspondence between edge sets.' This merely re-states what our formal definition
-defines as an isomorphism between graphs, however this definition involving sets makes the proof more straightforward.
+Using induction let's establish a base case where we have two graphs, $A$ and $B$ that both have two nodes each and are
+completely connected. Since the smallest a complete graph can be is a pair of nodes that connected by a single edge, it is
+obvious that these two graphs are isomorphic since we can create a bijection mapping of one graph to the other.
 \
 \
-If we have two graphs with the same number of nodes, then we already know we can create a one-to-one mapping of the 
-nodes from one graph to another which satisfies part of our isomorphism definition. 
-This leaves us with only the edges to worry about, as simply mapping all of the nodes doesn't necessarily mean the graphs 
-are isomorphic.
+Let P(n) be the statement that two complete graphs, $A$ and $B$ have the same $n$ number of nodes and are isomorphic. We've 
+already explained how this is true for $n = 2$. Let's let n = k. Since we know P(k) is true for our base case where k = 2, 
+now we must show that P(k+1) is also true. 
 \
 \
-However since we also know that both graphs are completely connected then we know that both graphs will
-have the same number of edges as well, but this also doesn't prove isomorphism as two graphs can have the same number of
-nodes and edges but one might have a different circuit length (a path that begins and ends at the same node) which breaks the 
-definition of isomorphism as one graph would have an edge that isn't in the edge set of the other after mapping nodes.
-\
-\
-Luckily we can ignore the circuit condition as we're talking about two completely connected graphs, which means that 
-both graphs must have the same circuit lengths for every node and thus two completely connected graphs with equal numbers of
-nodes must be isomorphic, as there isn't any way to create a one-to-one mapping of nodes that doesn't also follow the 
-$(u,v) \in E_1$ iff $(f(u),f(v)) \in E_2$ part of our definition.
+By adding a single node to both of our graphs and keeping them completely connected, our graphs would now have three nodes each, 
+where each node is connected by two edges. Since both graphs increase in size by the same number of nodes and the same number of
+edges then we are still able to create a bijection mapping of A to B or vice versa. Adding more nodes won't affect the graphs' 
+isomorphism as their sizes will increase simultaneously always allowing for the new nodes/edges to be mapped and retain the bijection
+of our mapping from the base case. 
